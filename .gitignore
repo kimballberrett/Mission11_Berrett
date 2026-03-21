@@ -1,0 +1,20 @@
+# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.sw?
+
+# Claude Code
+.claude/
