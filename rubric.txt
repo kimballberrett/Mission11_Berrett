@@ -1,54 +1,60 @@
-Program Runs Without Error
-Performance levels:	Score:
-Yes	5
-Program compiles and runs without error.
-No	0
-Program has errors.
-Models Match Database
-Performance levels:	Score:
-Yes	5
-Models match the database.
-Partial	2.5
-There are errors in the models.
-No	0
-Models do not match the database.
-App Lists Books
+App Compiles and Runs
 Performance levels:	Score:
 Yes	10
-App should list out all the books in the database
+Program compiles and runs without any errors.
 No	0
-App does not list out the books in the database
-App Contains Dynamic Pagination
+Program has errors or the page does not load correctly.
+App Allows User to Filter Books
 Performance levels:	Score:
-Yes	15
-App dynamically builds the link tags based on the number of items in the data set.
-Manual Links	7.5
-App uses static links for pagination.
-Partial	7.5
-Dynamic Links are not working properly to generate the links to the different pages.
+Yes	20
+The app gives the user the ability to filter books by category.
+Partial	10
+Category filtering is in place but does not work as expected.
 No	0
-Missing Pagination.
-App Allows User to Sort Books
+The app is missing the ability to filter by category.
+Page Numbers Change with Filtering
 Performance levels:	Score:
 Yes	5
-The app gives the user the ability to sort by Book Title.
-Partial	2.5
-Sorting does not function properly.
+The page numbers adjust with the filtering.
 No	0
-The ability to sort by Book Title is missing.
-App is Styled with Bootstrap
+The page numbers do not adjust with the filtering.
+App Has Cart that Persists
 Performance levels:	Score:
-Yes	5
-App uses Bootstrap to style the page.
-Partial	2.5
-App is partially styled.
+Yes	25
+The app has a cart that persists as the user navigates around the site.
+Partial	10
+Parts of the cart are in place, but it is not functioning correctly.
 No	0
-App is missing Bootstrap styling.
+The app is missing the cart functionality.
+Cart Page
+Performance levels:	Score:
+Yes	10
+The app has a cart page that shows each line item with the quantity and subtotal, as well as a total.
+Partial	5
+The cart page does not update the quantity when the same item is added or the numbers are not working correctly.
+No	0
+App is missing a Cart page.
+Cart Summary on Home Page
+Performance levels:	Score:
+Yes	10
+The app has a functioning cart summary on the home page that has the price AND quantity.
+Partial	5
+The app has a cart summary, but it is not functioning correctly or is missing the quantity.
+No	0
+The app is missing a cart summary on the home page.
+Bootstrap
+Performance levels:	Score:
+Yes	10
+The app uses the Bootstrap Grid for layout and includes two new things from Bootstrap.
+Partial	5
+The app uses the Bootstrap Grid, but does not include two new things or vice-versa.
+No	0
+The app does not use the Bootstrap Grid and is missing the two new things from Bootstrap.
 Code is Clean
 Performance levels:	Score:
-Yes	5
-Good readability (good variable names, line spacing, commenting, etc.)
-Some Problems	2.5
-Some readability issues.
+Yes	10
+Code is readable, with appropriate naming and proper spacing and comments, and the organization of the files is good.
+Partial	0
+There are issues with readability or organization.
 No	0
-Major Readability Issues.
+There are significant issues with readability or organization.

@@ -1,12 +1,21 @@
 import './App.css';
-import BookList from './BookList';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import BooksPage from './pages/BooksPage';
+import CartPage from './pages/CartPage';
 
-// Root component — renders the BookList component for the bookstore app
+// Root component — CartProvider wraps Router so cart state is available on all routes.
 function App() {
     return (
-        <>
-            <BookList />
-        </>
+        <CartProvider>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<BooksPage />} />
+                    <Route path="/books" element={<BooksPage />} />
+                    <Route path="/cart" element={<CartPage />} />
+                </Routes>
+            </Router>
+        </CartProvider>
     );
 }
 
