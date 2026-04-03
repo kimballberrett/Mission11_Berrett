@@ -1,3 +1,5 @@
+// Reusable pagination component with Previous/Next buttons, numbered pages,
+// and a page-size selector. Used by the admin page to navigate through book records.
 interface PaginationProps {
   currentPage: number;
   totalPages: number;

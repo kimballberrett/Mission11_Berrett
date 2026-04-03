@@ -29,7 +29,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Restrict CORS to the local React dev server
+// Apply the named CORS policy for the React frontend (local + Azure)
 app.UseCors("AllowReactApp");
 
 app.UseAuthorization();

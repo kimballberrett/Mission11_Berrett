@@ -1,3 +1,5 @@
+// Form component for adding a new book to the database.
+// Uses controlled inputs and calls the addBook API on submit.
 import { useState } from 'react';
 import type { Book } from '../types/Book';
 import { addBook } from '../api/BooksAPI';
@@ -8,6 +10,7 @@ interface NewBookFormProps {
 }
 
 const NewBookForm = ({ onSuccess, onCancel }: NewBookFormProps) => {
+  // Initialize form with empty/default values for all book fields.
   const [formData, setFormData] = useState<Book>({
     bookId: 0,
     title: '',
@@ -20,10 +23,12 @@ const NewBookForm = ({ onSuccess, onCancel }: NewBookFormProps) => {
     price: 0,
   });
 
+  // Update the matching field in formData whenever an input changes.
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Submit the new book to the API, then notify the parent on success.
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await addBook(formData);

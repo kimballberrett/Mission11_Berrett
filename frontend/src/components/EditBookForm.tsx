@@ -1,3 +1,5 @@
+// Form component for editing an existing book in the database.
+// Pre-populates fields with the selected book's data and calls updateBook on submit.
 import { useState } from 'react';
 import type { Book } from '../types/Book';
 import { updateBook } from '../api/BooksAPI';
@@ -13,12 +15,15 @@ const EditBookForm = ({
   onSuccess,
   onCancel,
 }: EditBookFormProps) => {
+  // Initialize form with the existing book's data.
   const [formData, setFormData] = useState<Book>({ ...book });
 
+  // Update the matching field in formData whenever an input changes.
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Submit the updated book to the API, then notify the parent on success.
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await updateBook(formData.bookId, formData);

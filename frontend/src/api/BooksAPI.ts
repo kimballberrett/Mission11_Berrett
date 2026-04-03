@@ -1,12 +1,17 @@
+// Centralized API layer for all book-related HTTP requests.
+// Each function wraps fetch in try/catch, logs errors, and rethrows for component-level handling.
 import type { Book } from '../types/Book';
 
+// Shape of the paginated response returned by the AllBooks endpoint.
 interface FetchBooksResponse {
   books: Book[];
   totalNumBooks: number;
 }
 
+// Base URL for the Book API — points to the Azure-hosted backend.
 const API_URL = 'https://mission13-berrett-backend.azurewebsites.net/Book';
 
+// Fetches a paginated list of books, optionally filtered by category.
 export const fetchBooks = async (
   pageSize: number,
   pageNum: number,
@@ -32,6 +37,7 @@ export const fetchBooks = async (
   }
 };
 
+// Sends a POST request to add a new book to the database.
 export const addBook = async (newBook: Book): Promise<Book> => {
   try {
     const response = await fetch(`${API_URL}/AddBook`, {
@@ -53,6 +59,7 @@ export const addBook = async (newBook: Book): Promise<Book> => {
   }
 };
 
+// Sends a PUT request to update an existing book by its ID.
 export const updateBook = async (
   bookId: number,
   updatedBook: Book
@@ -73,6 +80,7 @@ export const updateBook = async (
   }
 };
 
+// Sends a DELETE request to remove a book by its ID.
 export const deleteBook = async (bookId: number): Promise<void> => {
   try {
     const response = await fetch(`${API_URL}/DeleteBook/${bookId}`, {

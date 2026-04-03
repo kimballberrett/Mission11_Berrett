@@ -1,3 +1,5 @@
+// Admin page for managing books — supports adding, editing, and deleting books.
+// Displays all books in a paginated table with action buttons per row.
 import { useEffect, useState } from 'react';
 import type { Book } from '../types/Book';
 import { deleteBook, fetchBooks } from '../api/BooksAPI';
@@ -15,6 +17,7 @@ const AdminBooksPage = () => {
   const [showForm, setShowForm] = useState(false);
   const [editingBook, setEditingBook] = useState<Book | null>(null);
 
+  // Fetch books from the API whenever page size or page number changes.
   useEffect(() => {
     const loadBooks = async () => {
       try {
@@ -31,6 +34,7 @@ const AdminBooksPage = () => {
     loadBooks();
   }, [pageSize, pageNum]);
 
+  // Prompts the user to confirm deletion, then removes the book from the database and local state.
   const handleDelete = async (bookId: number) => {
     const confirmDelete = window.confirm(
       'Are you sure you want to delete this book?'
@@ -45,6 +49,7 @@ const AdminBooksPage = () => {
     }
   };
 
+  // Show loading or error message while data is being fetched.
   if (loading) return <p>Loading books...</p>;
   if (error) return <p className="text-red-500">Error: {error}</p>;
 
