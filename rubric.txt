@@ -1,60 +1,46 @@
-App Compiles and Runs
+App Compiles and Runs Without Error
 Performance levels:	Score:
 Yes	10
-Program compiles and runs without any errors.
+App compiles and runs without crashing or giving other errors.
 No	0
-Program has errors or the page does not load correctly.
-App Allows User to Filter Books
+App has some issue that is causing it to break.
+Ability to Add Books
 Performance levels:	Score:
 Yes	20
-The app gives the user the ability to filter books by category.
+The user has the ability to add new books to the database.
 Partial	10
-Category filtering is in place but does not work as expected.
+There are issues with adding books to the database.
 No	0
-The app is missing the ability to filter by category.
-Page Numbers Change with Filtering
+The app does not give the ability to add books to the database.
+Ability to Edit Books
 Performance levels:	Score:
-Yes	5
-The page numbers adjust with the filtering.
-No	0
-The page numbers do not adjust with the filtering.
-App Has Cart that Persists
-Performance levels:	Score:
-Yes	25
-The app has a cart that persists as the user navigates around the site.
+Yes	20
+The user has the ability to edit books in the database.
 Partial	10
-Parts of the cart are in place, but it is not functioning correctly.
+There are issues with editing books in the database.
 No	0
-The app is missing the cart functionality.
-Cart Page
+The app does not give the ability to edit books in the database.
+Ability to Delete Books
 Performance levels:	Score:
-Yes	10
-The app has a cart page that shows each line item with the quantity and subtotal, as well as a total.
-Partial	5
-The cart page does not update the quantity when the same item is added or the numbers are not working correctly.
+Yes	20
+The user has the ability to delete books from the database.
+Partial	10
+There are issues with deleting books from the database.
 No	0
-App is missing a Cart page.
-Cart Summary on Home Page
+The app does not give the ability to delete books from the database.
+App Deployed on Azure
 Performance levels:	Score:
-Yes	10
-The app has a functioning cart summary on the home page that has the price AND quantity.
-Partial	5
-The app has a cart summary, but it is not functioning correctly or is missing the quantity.
+Yes	20
+Both the front end and the back end are deployed on Azure, and the app is functioning properly.
+Partial	10
+Either the front end or the back end are not deployed, or the deployment is not functioning correctly.
 No	0
-The app is missing a cart summary on the home page.
-Bootstrap
-Performance levels:	Score:
-Yes	10
-The app uses the Bootstrap Grid for layout and includes two new things from Bootstrap.
-Partial	5
-The app uses the Bootstrap Grid, but does not include two new things or vice-versa.
-No	0
-The app does not use the Bootstrap Grid and is missing the two new things from Bootstrap.
+App is not deployed.
 Code is Clean
 Performance levels:	Score:
 Yes	10
-Code is readable, with appropriate naming and proper spacing and comments, and the organization of the files is good.
-Partial	0
-There are issues with readability or organization.
+Good readability, commending, line spacing, etc.
+Partial	5
+Missing commenting or other readability issues.
 No	0
-There are significant issues with readability or organization.
+Code is difficult to understand or read.

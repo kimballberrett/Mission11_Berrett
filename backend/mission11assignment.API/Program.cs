@@ -12,7 +12,13 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("BookConnection")));
 
 // Allow cross-origin requests from the React frontend
-builder.Services.AddCors();
+builder.Services.AddCors(options =>
+    options.AddPolicy("AllowReactApp",
+    policy => {
+        policy.WithOrigins("http://localhost:3000", "https://lively-ground-075c0531e.westus2.7.azurestaticapps.net", "https://lively-ground-075c0531e-preview.westus2.7.azurestaticapps.net")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    }));
 
 var app = builder.Build();
 
@@ -24,7 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Restrict CORS to the local React dev server
-app.UseCors(x => x.WithOrigins("http://localhost:3000"));
+app.UseCors("AllowReactApp");
 
 app.UseAuthorization();
 app.MapControllers();

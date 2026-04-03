@@ -26,7 +26,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
                     .map((cat) => `categories=${encodeURIComponent(cat)}`)
                     .join('&');
 
-                const url = `http://localhost:4000/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}${selectedCategories.length ? `&${categoryParams}` : ''}`;
+                const url = `https://mission13-berrett-backend.azurewebsites.net/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}${selectedCategories.length ? `&${categoryParams}` : ''}`;
 
                 const response = await fetch(url);
                 if (!response.ok) {

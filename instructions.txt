@@ -1,19 +1,25 @@
-Mission #12 Assignment
-IS 413 – Hilton
-Continue the Bookstore project from Mission #11. Following the pattern in the videos, build in
-the ability for the user to filter by book categories (i.e. “Biography, “Self-Help”, etc.) The page
-numbers should adjust based on the category selected.
-Add the ability for the user to add books to their shopping cart. The cart should update the
-quantity, price, subtotal, and total for each book that is added. The information should persist in
-the cart for the duration of the session as the user navigates around. Include the functionality for
-the user to “Continue Shopping” and go back to the page where they left off when they added the
-item to their cart. Add a cart summary to the main book list page.
-Arrange the website using the Bootstrap Grid. In addition, do two things with Bootstrap that we
-have never done before in class. (#notcoveredinthevideos) With your submission link in
-Learning Suite, make sure to add a comment with which bootstrap attributes you used so that the
-TAs know what it is and where to find it. (NOTE: If you fail to add the comment, you will
-receive no credit for that criteria in the rubric.) This is not meant to be a difficult requirement, so
-please do not make it more than it is. I just want you to explore Bootstrap a little further and see
-what kind of features are available.
-Submit a pUbLiC link to the GitHub repository along with your comment about the
-Bootstrap attributes you added via Learning Suite.
+Mission #13 Assignment
+IS 413 - Hilton
+Continuing the Bookstore app from Mission #12, create a new Git branch for
+Phase #6.
+Add the ability for the user to add, delete, and update books in the database.
+Deploy the app to Azure.
+NOTE: In order for the TAs to be able to navigate to your admin page, we need to
+add a file on the front end. Remember that React is an SPA (Single Page
+Application), so if we try to type in something like “/adminbooks” after the URL,
+it will try to take the user to a different URL, rather than staying on the same page
+and going to a different React route. In order to fix that, we add a file in the
+“public” folder in React named “routes.json”, and then add the following code:
+{
+ "routes": [
+ {
+ "route": "/*",
+ "serve": "/index.html",
+ "statusCode": 200
+ }
+ ]
+}
+That will change the program so that routes like “/adminbooks” that come after the
+URL will keep the same page, but use the React route instead.
+Submit the link to your deployed website via Learning Suite. (If you did not
+deploy the website, submit your GitHub link.)
